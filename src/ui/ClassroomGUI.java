@@ -2,6 +2,8 @@ package ui;
 
 
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -30,7 +32,13 @@ public class ClassroomGUI {
 
 	@FXML
     private BorderPane mainPanel;
-    
+	
+	@FXML
+	private TextField txtUserLogin;
+
+	@FXML
+	private PasswordField txtUserPassword;
+	
     @FXML
     private TextField txtUsername;
 
@@ -77,7 +85,7 @@ public class ClassroomGUI {
     
     public ClassroomGUI(Classroom cm) {
     	
-    	classroom = cm;    	
+    	classroom = new Classroom();    	
 	}
     
     
@@ -103,18 +111,7 @@ public class ClassroomGUI {
     	//the method (initialize) is called several times by diferents fxml file loads 
     }
     
-    
 
- /*   
-    public UserAccount checkUser(String username, String password) {
-    	UserAccount user = null;
-    	for(int i=0; i<classroom.size(); i++ ) {
-    		if(classroom.get(i).getUserName().equals(username)&&classroom.get(i).getPassword.equals(password))
-    			user = classroom.get(i);
-    	}
-    	return user;
-    }
-*/    
     @FXML
     void loadLogin(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
@@ -124,6 +121,35 @@ public class ClassroomGUI {
     	
 		mainPanel.getChildren().clear();
     	mainPanel.setTop(addContactPane);
+
+    }
+    
+    @FXML
+    void login(ActionEvent event) throws IOException{
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Información");
+        alert.setHeaderText(null);
+
+        String user = "a";
+        String password = "a";
+
+        if(txtUserLogin.getText().equals(user) && txtUserPassword.getText().equals(password)) {
+            alert.setContentText("Ha iniciado sesión correctamente");
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("register.fxml"));
+    		
+    		fxmlLoader.setController(this);    	
+    		Parent addContactPane = fxmlLoader.load();
+        	
+    		mainPanel.getChildren().clear();
+        	mainPanel.setTop(addContactPane);
+            
+        }else {
+            alert.setContentText("U y/o contraseña incorrectos");
+            System.out.println(user +" "+password+" "+txtUserLogin.getText()+" "+txtUserPassword.getText()+" ");
+        }
+
+        alert.showAndWait();
+
 
     }
 
