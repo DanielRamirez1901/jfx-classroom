@@ -11,7 +11,7 @@ public class UserAccount {
 
 	
 	public UserAccount(String name, String gender, String career,String birthday, String password, String browser) {
-		super();
+		
 		this.name = name;
 		this.gender = gender;
 		this.career = career;
@@ -21,6 +21,7 @@ public class UserAccount {
 	}
 
 
+	
 
 	public String getName() {
 		return name;

@@ -22,8 +22,8 @@
               <menus>
                 <Menu mnemonicParsing="false" text="Go To">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Log In Screen" />
-                        <MenuItem mnemonicParsing="false" text="Register Screen" />
+                    <MenuItem mnemonicParsing="false" onAction="#loadLogin" text="Log In Screen" />
+                        <MenuItem mnemonicParsing="false" onAction="#loadRegister" text="Register Screen" />
                   </items>
                 </Menu>
               </menus>
@@ -41,3 +41,4 @@
       </TableView>
    </children>
 </AnchorPane>
+

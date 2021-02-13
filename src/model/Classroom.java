@@ -13,6 +13,7 @@ public class Classroom {
 	public void addContact(String name, String gender, String career,String birthday, String password, String browser) {
 		users.add(new UserAccount(name, gender, career, birthday , password, browser));
 	}
+
 	
 	public List<UserAccount> getUsers(){
 		return users; 
@@ -26,4 +27,5 @@ public class Classroom {
     	}
     	return user;
     }
+    
 }

@@ -18,23 +18,23 @@
       </ImageView>
       <AnchorPane layoutX="346.0" layoutY="56.0" prefHeight="294.0" prefWidth="269.0" style="-fx-background-color: #6c5ce7;">
          <children>
-            <TextField layoutX="26.0" layoutY="89.0" prefHeight="26.0" prefWidth="219.0" promptText="username" style="-fx-border-color: #ecf0f1; -fx-background-color: #6c5ce7;">
+            <TextField fx:id="txtUserLogin" layoutX="26.0" layoutY="89.0" prefHeight="26.0" prefWidth="219.0" promptText="username" style="-fx-border-color: #ecf0f1; -fx-background-color: #6c5ce7;">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <PasswordField layoutX="25.0" layoutY="157.0" prefHeight="26.0" prefWidth="219.0" promptText="password" style="-fx-background-color: #6c5ce7; -fx-border-color: #ecf0f1;">
+            <PasswordField fx:id="txtUserPassword" layoutX="25.0" layoutY="157.0" prefHeight="26.0" prefWidth="219.0" promptText="password" style="-fx-background-color: #6c5ce7; -fx-border-color: #ecf0f1;">
                <font>
                   <Font size="14.0" />
                </font>
             </PasswordField>
-            <Button layoutX="25.0" layoutY="240.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="87.0" style="-fx-background-color: #a29bfe;" text="Sing Up" />
+            <Button layoutX="25.0" layoutY="240.0" mnemonicParsing="false" onAction="#loadRegister" prefHeight="27.0" prefWidth="87.0" style="-fx-background-color: #a29bfe;" text="Sing Up" />
             <Label layoutX="110.0" layoutY="39.0" text="Log in" textFill="#2f2929">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="157.0" layoutY="240.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="87.0" style="-fx-background-color: #a29bfe;" text="Log In" />
+            <Button layoutX="157.0" layoutY="240.0" mnemonicParsing="false" onAction="#login" prefHeight="27.0" prefWidth="87.0" style="-fx-background-color: #a29bfe;" text="Log In" />
          </children>
       </AnchorPane>
       <ImageView fitHeight="359.0" fitWidth="332.0" layoutY="48.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
